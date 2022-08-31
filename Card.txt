@@ -1,0 +1,60 @@
+
+class Card {
+    private int rank; //initialize the rank (Ace,3,4...King)
+    private int suit; //initialize the suit (spades, hearts...)
+    
+    //constructor
+    public Card(int suit, int rank){
+        this.rank = rank;
+        this.suit = suit;
+    }//end construcor
+    
+    //getter method
+    public int getCard(){
+        return rank; 
+    }//end getCard
+    
+    //setter method
+    public void setCard(int rank){
+        this.rank = rank;
+    }//end setCard
+    
+    public int getSuit()
+    {
+    	return suit;
+    }
+
+	
+    @Override
+	
+    public String toString(){
+    //combine rank and suit together into a single string(ex: Ace of Diamonds)
+
+       
+
+		//suing StringBuilhowCardder for modifiability later on
+        StringBuilder displayCard = new StringBuilder();
+    	 //create if looping for card rank
+        if(rank == 11) { displayCard.append("Jack "); }
+        else if (rank == 12) { displayCard.append("Queen "); }
+        else if (rank == 13) { displayCard.append("King "); }
+        else if (rank == 1) { displayCard.append("Ace "); }
+        else { displayCard.append(rank);}
+        //end if looping for card rank
+        
+        displayCard.append(" of "); //Print the string format
+        
+        //create if looping for card suit
+        if(suit == 0) { displayCard.append("Spades "); }
+        else if (suit == 1) { displayCard.append("Hearts "); }
+        else if (suit == 2) { displayCard.append("Clubs "); }
+        else if (suit == 3) { displayCard.append("Diamonds "); }
+        else { }
+        //end if looping for card suit
+        
+        
+        //return the result of an entire combined string
+        return displayCard.toString();
+    }
+    
+}//end Card Class

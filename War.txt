@@ -1,0 +1,76 @@
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
+import javafx.util.Pair;
+
+public class War{
+
+ 
+	
+public LinkedList<Card> shuffle1(LinkedList<Card> firstDeck) 
+{
+	 
+	Collections.shuffle(firstDeck, new Random()); //shuffle the deck randomly
+	return firstDeck;
+}
+
+public LinkedList<Card >shuffle2(LinkedList<Card> secondDeck)
+{
+	 
+	  Collections.shuffle(secondDeck, new Random()); //shuffle the deck randomly
+	return secondDeck;
+}
+ 
+public  LinkedList<Card> Battle1(LinkedList<Card> firstDeck, Card p1Card,Card p2Card)
+    {
+    	
+    	
+    	    firstDeck.addLast(p1Card);  
+             firstDeck.addLast(p2Card);
+             
+             return firstDeck ;
+           
+           
+      }//end if
+  public  LinkedList<Card> Battle2(LinkedList<Card> secondDeck,Card p2Card,Card p1Card) {
+     
+          
+      	  
+           secondDeck.addLast(p2Card);  
+           secondDeck.addLast(p1Card);
+           
+           return secondDeck;
+     }
+
+   public boolean CompareWarCard2(LinkedList<Card> war1_total ,LinkedList<Card> war2_total)
+   {
+	   if(war2_total.get(4).getCard() >war1_total.get(4).getCard())
+	   {
+		   return true;
+	
+       }
+	   else 
+	   {
+		   return false;
+	   }
+   }
+   public boolean CompareWarCard1(LinkedList<Card> war1_total, LinkedList<Card> war2_total)
+   {
+	   if(war1_total.get(4).getCard() >war2_total.get(4).getCard())
+	   {
+		   return true;
+	   }
+	   else
+	   {
+		   return false;
+	   }
+   }
+}
+
+  
+  
